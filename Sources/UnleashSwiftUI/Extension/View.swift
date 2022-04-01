@@ -25,9 +25,10 @@ extension View {
     ///                 isPresented: $isPresented,
     ///                 detents: [.medium()],
     ///                 showGrabber: true,
+    ///                 undimmed: .medium,
     ///                 onDismiss: didDismiss
     ///             ) {
-    ///                 EmptyView()
+    ///                 Color.mint
     ///             }
     ///         }
     ///         func didDismiss() {
