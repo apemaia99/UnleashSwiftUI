@@ -3,5 +3,4 @@
 Each component is fully documented with examples as well. You can consult it via Xcode as you are already used to by pressing <kbd>⌥</kbd>.
 
 # Components list
-- Non modal experience introduced in iOS 15 only for UIKit
-<code>.sheet(isPresented:detents:showGrabber:scrollingExpand:undimmed:edgeRadius:onDismiss:content:)</code>
+- Non modal experience introduced in iOS 15 only for UIKit<code>.sheet(isPresented:detents:showGrabber:scrollingExpand:undimmed:edgeRadius:onDismiss:content:)</code>
