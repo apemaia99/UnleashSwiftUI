@@ -6,4 +6,4 @@ Each component is fully documented with examples as well. You can consult it via
 ## Installation
 📲 Open your Xcode Project then go to File > Add Packages... and paste this repository link. For more information check out https://developer.apple.com/documentation/swift_packages/adding_package_dependencies_to_your_app
 ## Components available
-- Non modal experience introduced in iOS 15 only for UIKit <code>sheet(isPresented:detents:showGrabber:scrollingExpand:undimmed:edgeRadius:onDismiss:content:)</code>
+- Non modal experience introduced in iOS 15 only for UIKit  (sheet with detents) <code>sheet(isPresented:detents:showGrabber:scrollingExpand:undimmed:edgeRadius:onDismiss:content:)</code>
