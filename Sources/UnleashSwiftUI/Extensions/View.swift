@@ -85,7 +85,7 @@ extension View {
     ///
     /// Use this method when you want to present a photo picker to the
     /// user when a Boolean value you provide is true. The example
-    /// below displays show how you can show some photos after picking
+    /// below displays how you can show some photos after picking
     /// with a limit selection of 3 photos:
     ///
     ///     struct PhotosCollection: View {
