@@ -6,6 +6,7 @@
 
 import SwiftUI
 
+@available(iOS 15.0, macCatalyst 15.0, *)
 struct DetentsSheet<Content>: UIViewRepresentable where Content: View {
     
     typealias UIViewType = UIView
@@ -84,16 +85,17 @@ struct DetentsSheet<Content>: UIViewRepresentable where Content: View {
     }
     
     func makeCoordinator() -> Coordinator {
-        Coordinator(parent: self)
+        Coordinator(self)
     }
 }
 
+@available(iOS 15.0, macCatalyst 15.0, *)
 extension DetentsSheet {
     class Coordinator: NSObject, UISheetPresentationControllerDelegate {
         
         private let parent: DetentsSheet
         
-        init(parent: DetentsSheet) {
+        init(_ parent: DetentsSheet) {
             self.parent = parent
         }
         //event delegate for controller dismissing from UIKit hierarchy and run onDismiss closure
