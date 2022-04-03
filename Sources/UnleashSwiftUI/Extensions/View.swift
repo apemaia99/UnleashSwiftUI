@@ -6,6 +6,7 @@
 
 import SwiftUI
 
+@available(iOS 15.0, macCatalyst 15.0, *)
 extension View {
     /// Presents a sheet with optional customizations when a binding to a Boolean value that you provide is true.
     ///
@@ -74,6 +75,61 @@ extension View {
                 content: content
             )
             self
+        }
+    }
+}
+
+@available(iOS 14.0, macCatalyst 14.0, *)
+extension View {
+    /// Presents a photo picker when a binding to a Boolean value that you provide is true.
+    ///
+    /// Use this method when you want to present a photo picker to the
+    /// user when a Boolean value you provide is true. The example
+    /// below displays show how you can show some photos after picking
+    /// with a limit selection of 3 photos:
+    ///
+    ///     struct PhotosCollection: View {
+    ///         @State private var imagePickerPresented = false
+    ///         @State private var images: [UIImage] = []
+    ///         var body: some View {
+    ///             NavigationView {
+    ///                 ScrollView {
+    ///                     ForEach(images, id:\.self) { image in
+    ///                         Image(uiImage: image)
+    ///                             .resizable()
+    ///                             .scaledToFit()
+    ///                             .frame(width: 140, height: 140, alignment: .center)
+    ///                         Divider()
+    ///                     }
+    ///                 }
+    ///                 .navigationTitle("Photo Picker")
+    ///                 .toolbar {
+    ///                     ToolbarItem {
+    ///                         Button {
+    ///                             imagePickerPresented.toggle()
+    ///                         } label: {
+    ///                             Image(systemName: "photo.on.rectangle")
+    ///                                 .font(.title2)
+    ///                         }
+    ///                     }
+    ///                 }
+    ///             }.photoPicker(isPresented: $imagePickerPresented, images: $images, limit: 3)
+    ///         }
+    ///     }
+    ///
+    /// - Parameters:
+    ///   - isPresented: A binding to a Boolean value that determines whether
+    ///   to present the photo picker.
+    ///   - images: Array of photos that picker fills.
+    ///   - limit: Limit number of selectable photos. Default value equal to 1
+    public func photoPicker(
+        isPresented: Binding<Bool>,
+        images: Binding<[UIImage]>,
+        limit: Int = 1
+    ) -> some View {
+        self.sheet(isPresented: isPresented) {
+            PhotoPicker(isPresented: isPresented, images: images, limit: limit)
+                .ignoresSafeArea(.container, edges: .bottom)
         }
     }
 }
