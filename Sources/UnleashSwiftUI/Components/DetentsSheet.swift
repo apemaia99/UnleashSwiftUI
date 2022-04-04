@@ -48,12 +48,12 @@ struct DetentsSheet<Content>: UIViewRepresentable where Content: View {
         //ViewController for UISheetPresentationController
         //HostingController for SwiftUI content
         let viewController = UIViewController()
-        let hostingController = UIHostingController(rootView: content.ignoresSafeArea(.container, edges: .bottom))
+        let hostingController = UIHostingController(rootView: content.ignoresSafeArea(.container, edges: .all))
         
         viewController.addChild(hostingController)
         viewController.view.addSubview(hostingController.view)
         
-        //Costraints for HostingController
+        //Constraints for HostingController
         hostingController.view.translatesAutoresizingMaskIntoConstraints = false
         hostingController.view.leftAnchor.constraint(equalTo: viewController.view.leftAnchor).isActive = true
         hostingController.view.topAnchor.constraint(equalTo: viewController.view.topAnchor).isActive = true
@@ -69,6 +69,10 @@ struct DetentsSheet<Content>: UIViewRepresentable where Content: View {
             sheetController.largestUndimmedDetentIdentifier = undimmed
             if let edgeRadius = edgeRadius {
                 sheetController.preferredCornerRadius = (edgeRadius <= 50 ? edgeRadius : 50)
+            }
+            if detents.contains(.large()) {
+                sheetController.prefersEdgeAttachedInCompactHeight = true
+                sheetController.widthFollowsPreferredContentSizeWhenEdgeAttached = true
             }
         }
         
