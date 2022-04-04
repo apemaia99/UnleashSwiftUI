@@ -64,6 +64,7 @@ struct DetentsSheet<Content>: UIViewRepresentable where Content: View {
         //Non modal experience with UISheetPresentationController customization (customization are available in a new modifier)
         if let sheetController = viewController.sheetPresentationController {
             sheetController.prefersEdgeAttachedInCompactHeight = true
+            sheetController.widthFollowsPreferredContentSizeWhenEdgeAttached = true
             sheetController.detents = detents
             sheetController.prefersScrollingExpandsWhenScrolledToEdge = scrollingExpand
             sheetController.prefersGrabberVisible = grabber
