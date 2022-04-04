@@ -53,7 +53,7 @@ struct DetentsSheet<Content>: UIViewRepresentable where Content: View {
         viewController.addChild(hostingController)
         viewController.view.addSubview(hostingController.view)
         
-        //Costraints for HostingController
+        //Constraints for HostingController
         hostingController.view.translatesAutoresizingMaskIntoConstraints = false
         hostingController.view.leftAnchor.constraint(equalTo: viewController.view.leftAnchor).isActive = true
         hostingController.view.topAnchor.constraint(equalTo: viewController.view.topAnchor).isActive = true
