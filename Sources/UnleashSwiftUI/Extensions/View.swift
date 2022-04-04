@@ -136,12 +136,14 @@ extension View {
 
 @available(iOS 14.0, macCatalyst 14.0, *)
 extension View {
-    public func camera(
+    func camera(
         isPresented: Binding<Bool>,
-        image: Binding<UIImage?>
+        image: Binding<UIImage?>,
+        device: UIImagePickerController.CameraDevice = .rear,
+        flash: UIImagePickerController.CameraFlashMode = .auto
     ) -> some View {
         self.fullScreenCover(isPresented: isPresented) {
-            Camera(isPresented: isPresented, image: image)
+            Camera(isPresented: isPresented, image: image, device: device, flash: flash)
                 .ignoresSafeArea(.container, edges: .vertical)
         }
     }

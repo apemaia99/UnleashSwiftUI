@@ -13,17 +13,7 @@ struct PhotoPicker: UIViewControllerRepresentable {
     typealias UIViewControllerType = PHPickerViewController
     @Binding var isPresented: Bool
     @Binding var images: [UIImage]
-    private let limit: Int
-    
-    init(
-        isPresented: Binding<Bool>,
-        images: Binding<[UIImage]>,
-        limit: Int
-    ) {
-        self._isPresented = isPresented
-        self._images = images
-        self.limit = limit
-    }
+    let limit: Int
     
     func makeUIViewController(context: Context) -> PHPickerViewController {
         
