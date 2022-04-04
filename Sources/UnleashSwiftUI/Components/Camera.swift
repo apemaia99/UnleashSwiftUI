@@ -14,7 +14,7 @@ struct Camera: UIViewControllerRepresentable {
     @Binding var isPresented: Bool
     @Binding var image: UIImage?
     let device: UIImagePickerController.CameraDevice
-    let flash: UIImagePickerController.CameraFlashMode
+    let flashMode: UIImagePickerController.CameraFlashMode
     
     func makeUIViewController(context: Context) -> UIImagePickerController {
         
@@ -22,7 +22,7 @@ struct Camera: UIViewControllerRepresentable {
         viewController.sourceType = .camera
         viewController.delegate = context.coordinator
         viewController.cameraDevice = device
-        viewController.cameraFlashMode = flash
+        viewController.cameraFlashMode = flashMode
         
         return viewController
     }
