@@ -136,6 +136,39 @@ extension View {
 
 @available(iOS 14.0, macCatalyst 14.0, *)
 extension View {
+    /// Presents a camera in fullscreen mode when a binding to a Boolean value that you provide is true.
+    ///
+    /// Use this method when you want to present a camera to the
+    /// user when a Boolean value you provide is true. The example
+    /// below displays how you can show a camera with front device pre-selected:
+    ///
+    ///     struct CameraView: View {
+    ///         @State private var isPresented = false
+    ///         @State private var image: UIImage?
+    ///
+    ///         var body: some View {
+    ///             NavigationView {
+    ///                 VStack {
+    ///                     Button("Open camera") {
+    ///                         isPresented.toggle()
+    ///                     }
+    ///                     if let image = image {
+    ///                         Image(uiImage: image)
+    ///                             .resizable()
+    ///                             .scaledToFit()
+    ///                             .frame(width: 150, height: 150, alignment: .center)
+    ///                     }
+    ///                 }
+    ///             }.camera(isPresented: $isPresented, image: $image, device: .front)
+    ///         }
+    ///     }
+    ///
+    /// - Parameters:
+    ///   - isPresented: A binding to a Boolean value that determines whether
+    ///   to present the camera.
+    ///   - images: A UIImage to fill with camera.
+    ///   - device: Front or Rear camera. By default is set to .rear
+    ///   - flash: For specifying the flash mode. By default is set to .auto
     public func camera(
         isPresented: Binding<Bool>,
         image: Binding<UIImage?>,
