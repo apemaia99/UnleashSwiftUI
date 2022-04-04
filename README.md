@@ -17,3 +17,7 @@ sheet(isPresented:detents:showGrabber:scrollingExpand:undimmed:edgeRadius:onDism
 ```swift
 photoPicker(isPresented:images:limit:)
 ```
+- Camera (UIImagePickerController from UIKit)
+```swift
+camera(isPresented:image:device:flashMode:)
+```
