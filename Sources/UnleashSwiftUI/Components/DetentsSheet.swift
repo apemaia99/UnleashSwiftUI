@@ -70,7 +70,7 @@ struct DetentsSheet<Content>: UIViewRepresentable where Content: View {
             if let edgeRadius = edgeRadius {
                 sheetController.preferredCornerRadius = (edgeRadius <= 50 ? edgeRadius : 50)
             }
-            sheetController.prefersEdgeAttachedInCompactHeight = true
+            sheetController.widthFollowsPreferredContentSizeWhenEdgeAttached = true
         }
         
         //Coordinator attach
