@@ -129,7 +129,7 @@ extension View {
     ) -> some View {
         self.sheet(isPresented: isPresented) {
             PhotoPicker(isPresented: isPresented, images: images, limit: limit)
-                .ignoresSafeArea(.container, edges: .bottom)
+                .ignoresSafeArea(.container, edges: .all)
         }
     }
 }
