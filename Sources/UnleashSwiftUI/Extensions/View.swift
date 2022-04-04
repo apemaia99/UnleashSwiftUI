@@ -145,7 +145,6 @@ extension View {
     ///     struct CameraView: View {
     ///         @State private var isPresented = false
     ///         @State private var image: UIImage?
-    ///
     ///         var body: some View {
     ///             NavigationView {
     ///                 VStack {
@@ -173,10 +172,10 @@ extension View {
         isPresented: Binding<Bool>,
         image: Binding<UIImage?>,
         device: UIImagePickerController.CameraDevice = .rear,
-        flash: UIImagePickerController.CameraFlashMode = .auto
+        flashMode: UIImagePickerController.CameraFlashMode = .auto
     ) -> some View {
         self.fullScreenCover(isPresented: isPresented) {
-            Camera(isPresented: isPresented, image: image, device: device, flash: flash)
+            Camera(isPresented: isPresented, image: image, device: device, flashMode: flashMode)
                 .ignoresSafeArea(.container, edges: .vertical)
         }
     }
