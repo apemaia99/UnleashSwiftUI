@@ -48,7 +48,7 @@ struct DetentsSheet<Content>: UIViewRepresentable where Content: View {
         //ViewController for UISheetPresentationController
         //HostingController for SwiftUI content
         let viewController = UIViewController()
-        let hostingController = UIHostingController(rootView: content.ignoresSafeArea(.container, edges: .all))
+        let hostingController = UIHostingController(rootView: content)
         
         viewController.addChild(hostingController)
         viewController.view.addSubview(hostingController.view)
@@ -63,6 +63,7 @@ struct DetentsSheet<Content>: UIViewRepresentable where Content: View {
         
         //Non modal experience with UISheetPresentationController customization (customization are available in a new modifier)
         if let sheetController = viewController.sheetPresentationController {
+            sheetController.prefersEdgeAttachedInCompactHeight = true
             sheetController.detents = detents
             sheetController.prefersScrollingExpandsWhenScrolledToEdge = scrollingExpand
             sheetController.prefersGrabberVisible = grabber
@@ -70,7 +71,7 @@ struct DetentsSheet<Content>: UIViewRepresentable where Content: View {
             if let edgeRadius = edgeRadius {
                 sheetController.preferredCornerRadius = (edgeRadius <= 50 ? edgeRadius : 50)
             }
-            sheetController.widthFollowsPreferredContentSizeWhenEdgeAttached = true
+            
         }
         
         //Coordinator attach
