@@ -136,7 +136,7 @@ extension View {
 
 @available(iOS 14.0, macCatalyst 14.0, *)
 extension View {
-    func camera(
+    public func camera(
         isPresented: Binding<Bool>,
         image: Binding<UIImage?>,
         device: UIImagePickerController.CameraDevice = .rear,
