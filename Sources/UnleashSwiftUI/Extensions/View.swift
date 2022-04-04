@@ -134,7 +134,7 @@ extension View {
     }
 }
 
-@available(iOS 13.0, macCatalyst 13.1, *)
+@available(iOS 14.0, macCatalyst 14.0, *)
 extension View {
     public func camera(
         isPresented: Binding<Bool>,

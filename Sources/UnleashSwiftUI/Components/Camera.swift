@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-@available(iOS 13.0, macCatalyst 13.1, *)
+@available(iOS 14.0, macCatalyst 14.0, *)
 struct Camera: UIViewControllerRepresentable {
     
     typealias UIViewControllerType = UIImagePickerController
@@ -30,7 +30,7 @@ struct Camera: UIViewControllerRepresentable {
     }
 }
 
-@available(iOS 13.0, macCatalyst 13.1, *)
+@available(iOS 14.0, macCatalyst 14.0, *)
 extension Camera {
     class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         
