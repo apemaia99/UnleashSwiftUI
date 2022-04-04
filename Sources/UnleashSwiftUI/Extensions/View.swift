@@ -53,7 +53,7 @@ extension View {
     ///   - edgeRadius: The radius applied on top edges. Any value greater than 50 will be ignored.
     ///   - onDismiss: The closure to execute when dismissing the sheet.
     ///   - content: A closure that returns the content of the sheet.
-    public func sheet<Content: View>(
+    public func sheet<Content>(
         isPresented: Binding<Bool>,
         detents: [UISheetPresentationController.Detent],
         showGrabber: Bool = false,
@@ -62,7 +62,7 @@ extension View {
         edgeRadius: CGFloat? = nil,
         onDismiss: (() -> Void)? = nil,
         content: @escaping () -> Content
-    ) -> some View {
+    ) -> some View where Content : View {
         ZStack {
             DetentsSheet(
                 isPresented: isPresented,
@@ -130,6 +130,19 @@ extension View {
         self.sheet(isPresented: isPresented) {
             PhotoPicker(isPresented: isPresented, images: images, limit: limit)
                 .ignoresSafeArea(.container, edges: .bottom)
+        }
+    }
+}
+
+@available(iOS 13.0, macCatalyst 13.1, *)
+extension View {
+    public func camera(
+        isPresented: Binding<Bool>,
+        image: Binding<UIImage?>
+    ) -> some View {
+        self.fullScreenCover(isPresented: isPresented) {
+            Camera(isPresented: isPresented, image: image)
+                .ignoresSafeArea(.container, edges: .vertical)
         }
     }
 }
