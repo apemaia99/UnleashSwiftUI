@@ -19,6 +19,8 @@ import UnleashSwiftUI
 ```swift
 .photoPicker(isPresented:images:limit:)
 ```
+<img src="/Resources/PhotoPicker.gif" width="292" height="633">
+
 - Camera (UIImagePickerController from UIKit)
 ```swift
 .camera(isPresented:image:device:flashMode:)
