@@ -11,13 +11,13 @@ import UnleashSwiftUI
 ## Components available
 - Non modal experience introduced in iOS 15 only for UIKit (sheet with detents)
 ```swift
-sheet(isPresented:detents:showGrabber:scrollingExpand:undimmed:edgeRadius:onDismiss:content:)
+.sheet(isPresented:detents:showGrabber:scrollingExpand:undimmed:edgeRadius:onDismiss:content:)
 ```
 - Photo Picker (PHPickerViewController from PhotosUI)
 ```swift
-photoPicker(isPresented:images:limit:)
+.photoPicker(isPresented:images:limit:)
 ```
 - Camera (UIImagePickerController from UIKit)
 ```swift
-camera(isPresented:image:device:flashMode:)
+.camera(isPresented:image:device:flashMode:)
 ```
