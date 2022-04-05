@@ -13,6 +13,8 @@ import UnleashSwiftUI
 ```swift
 .sheet(isPresented:detents:showGrabber:scrollingExpand:undimmed:edgeRadius:onDismiss:content:)
 ```
+<img src="/Resources/DetentSheet.gif" width="292" height="633">
+
 - Photo Picker (PHPickerViewController from PhotosUI)
 ```swift
 .photoPicker(isPresented:images:limit:)
