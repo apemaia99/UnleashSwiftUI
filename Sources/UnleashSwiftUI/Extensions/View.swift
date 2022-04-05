@@ -19,7 +19,7 @@ extension View {
     ///         var body: some View {
     ///             VStack {
     ///                 Button("Open") {
-    ///                     isPresented = true
+    ///                     isPresented.toggle()
     ///                 }
     ///             }
     ///             .sheet(
