@@ -41,7 +41,6 @@ struct DetentsSheet<Content>: UIViewRepresentable where Content: View {
     
     func makeUIView(context: Context) -> UIView {
         let view = UIView()
-        view.backgroundColor = .systemBackground
         return view
     }
     
@@ -52,8 +51,8 @@ struct DetentsSheet<Content>: UIViewRepresentable where Content: View {
         print(context.environment.colorScheme)
         let hostingController = UIHostingController(
             rootView: content
-                .ignoresSafeArea(.container, edges: .all)
                 .preferredColorScheme(context.environment.colorScheme)
+                .ignoresSafeArea(.container, edges: .all)
         )
         
         viewController.addChild(hostingController)
