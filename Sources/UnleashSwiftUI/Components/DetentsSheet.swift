@@ -48,6 +48,7 @@ struct DetentsSheet<Content>: UIViewRepresentable where Content: View {
         //ViewController for UISheetPresentationController
         //HostingController for SwiftUI content
         let viewController = UIViewController()
+        print(context.environment.colorScheme)
         let hostingController = UIHostingController(
             rootView: content
                 .ignoresSafeArea(.container, edges: .all)
