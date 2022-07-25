@@ -41,6 +41,7 @@ struct DetentsSheet<Content>: UIViewRepresentable where Content: View {
     
     func makeUIView(context: Context) -> UIView {
         let view = UIView()
+        view.backgroundColor = .systemBackground
         return view
     }
     
