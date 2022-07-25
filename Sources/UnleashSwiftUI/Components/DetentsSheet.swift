@@ -9,6 +9,8 @@ import SwiftUI
 @available(iOS 15.0, macCatalyst 15.0, *)
 struct DetentsSheet<Content>: UIViewRepresentable where Content: View {
     
+    @Environment(\.colorScheme) private var colorScheme
+    
     typealias UIViewType = UIView
     @Binding var isPresented: Bool
     private let detents: [UISheetPresentationController.Detent]
@@ -48,10 +50,9 @@ struct DetentsSheet<Content>: UIViewRepresentable where Content: View {
         //ViewController for UISheetPresentationController
         //HostingController for SwiftUI content
         let viewController = UIViewController()
-        print(context.environment.colorScheme)
         let hostingController = UIHostingController(
             rootView: content
-                .preferredColorScheme(context.environment.colorScheme)
+                .preferredColorScheme(colorScheme)
                 .ignoresSafeArea(.container, edges: .all)
         )
         
